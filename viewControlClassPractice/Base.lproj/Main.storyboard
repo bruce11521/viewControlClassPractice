@@ -1,24 +1,190 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eTU-B6-M2a">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="DFChuW4.TTF">
+            <string>DFChu-W4-WIN-BF</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Music-->
+        <scene sceneID="2nC-eO-fJh">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="xUN-Bt-IsW" customClass="mainViewController" customModule="viewControlClassPractice" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3v2-ts-2iI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Song Title Test" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LaI-wS-cP5" userLabel="songTitleTextView">
+                                <rect key="frame" x="16" y="387" width="343" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="DFChu-W4-WIN-BF" family="DFChuW4-B5" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZrM-68-Xqz" userLabel="albumImageView">
+                                <rect key="frame" x="16" y="44" width="343" height="335"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="PhotoView"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d19-4S-ouE" userLabel="previousBtn">
+                                <rect key="frame" x="72" y="527" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="backward.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="previousBtnPress:" destination="xUN-Bt-IsW" eventType="touchUpInside" id="0xF-1g-fN7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXb-jX-KJw" userLabel="playBtn">
+                                <rect key="frame" x="162" y="527" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="play.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26" scale="large" weight="regular"/>
+                                </state>
+                                <connections>
+                                    <action selector="playBtnPress:" destination="xUN-Bt-IsW" eventType="touchUpInside" id="lsG-Mh-5zU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbp-JV-qEm" userLabel="nextBtn">
+                                <rect key="frame" x="252" y="527" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="forward.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextBtnPress:" destination="xUN-Bt-IsW" eventType="touchUpInside" id="Bju-Le-gqt"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kBN-OU-RlF" userLabel="timeSlider">
+                                <rect key="frame" x="31" y="464" width="313" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="songTimeSliderValueChange:" destination="xUN-Bt-IsW" eventType="valueChanged" id="N5K-B7-raJ"/>
+                                </connections>
+                            </slider>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="00:00" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNN-gB-qaT" userLabel="nowTimeTextView">
+                                <rect key="frame" x="16" y="501" width="57" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="DFChu-W4-WIN-BF" family="DFChuW4-B5" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="03:33" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Nd-XZ-85m" userLabel="lastTimeTextView">
+                                <rect key="frame" x="303" y="501" width="56" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="DFChu-W4-WIN-BF" family="DFChuW4-B5" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyC-LB-TlS">
+                                <rect key="frame" x="33" y="590" width="309" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DFChu-W4-WIN-BF" family="DFChuW4-B5" pointSize="30"/>
+                                <state key="normal" title="歌 曲 歌 詞 "/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="albumTextBtnPress:" destination="xUN-Bt-IsW" eventType="touchUpInside" id="51p-QN-6Ut"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Xaq-67-I5b"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Music" image="music.note" catalog="system" id="gYT-Ca-pVN"/>
+                    <navigationItem key="navigationItem" title="Music" id="1Wo-PP-m76"/>
+                    <connections>
+                        <outlet property="albumImageView" destination="ZrM-68-Xqz" id="NM6-8Z-PDS"/>
+                        <outlet property="albumTextBtn" destination="xyC-LB-TlS" id="xZ0-8C-6Rv"/>
+                        <outlet property="lastTimeTextView" destination="9Nd-XZ-85m" id="DWR-Sp-f3j"/>
+                        <outlet property="nextBtn" destination="Cbp-JV-qEm" id="4Qh-Tk-b9y"/>
+                        <outlet property="nowTimeTextView" destination="cNN-gB-qaT" id="d2l-hm-vQx"/>
+                        <outlet property="playBtn" destination="EXb-jX-KJw" id="UyV-sC-GV0"/>
+                        <outlet property="previousBtn" destination="d19-4S-ouE" id="QTS-fU-ALP"/>
+                        <outlet property="songTimeSlider" destination="kBN-OU-RlF" id="YZI-dG-clh"/>
+                        <outlet property="songTitleTextView" destination="LaI-wS-cP5" id="Trq-yK-RUO"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qmf-BL-7TN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-87.200000000000003" y="1046.6266866566718"/>
+        </scene>
+        <!--Album-->
+        <scene sceneID="xaT-7n-Qda">
+            <objects>
+                <viewController storyboardIdentifier="AlbumView" id="0Nn-Zp-vOo" customClass="musicViewController" customModule="viewControlClassPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WfW-nU-zu3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="TextView_專輯介紹" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwv-Pf-sHv">
+                                <rect key="frame" x="16" y="383" width="343" height="264"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="DFChu-W4-WIN-BF" family="DFChuW4-B5" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Db3-mY-XZo" userLabel="albumImageView">
+                                <rect key="frame" x="16" y="44" width="343" height="335"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="PhotoView"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="f5w-1c-k2W"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Album" image="photo.fill" catalog="system" id="lLu-bc-PWe"/>
+                    <connections>
+                        <outlet property="albumImageView" destination="Db3-mY-XZo" id="2iL-Al-xmP"/>
+                        <outlet property="albumTextView" destination="Nwv-Pf-sHv" id="ZdO-yL-Id8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pb2-wV-y6K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="692" y="1047"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="6yg-np-chQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eTU-B6-M2a" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="c5d-2T-HVi"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="U6P-f0-sSK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xUN-Bt-IsW" kind="relationship" relationship="rootViewController" id="5if-b7-IL3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TyW-cR-a0u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-673" y="86"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backward.fill" catalog="system" width="64" height="38"/>
+        <image name="forward.fill" catalog="system" width="64" height="38"/>
+        <image name="music.note" catalog="system" width="48" height="64"/>
+        <image name="photo.fill" catalog="system" width="64" height="46"/>
+        <image name="play.fill" catalog="system" width="58" height="64"/>
+    </resources>
 </document>
